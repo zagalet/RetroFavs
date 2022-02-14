@@ -4,7 +4,7 @@
 ---
 
 ### Screenshots
-![Image](/docs/img/retrofav.png?)\ 
+![Image](/docs/img/retrofav.png?)
 
 ---
 
