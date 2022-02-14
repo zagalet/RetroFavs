@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <title>Retro Fav's</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/tailwind/tailwind-theme.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&amp;display=swap">
+    <style>
+    * {
+        cursor:default;
+    }
+    </style>
+  </head>
+  <body class="antialiased dark:bg-gray-700 text-body font-body">
+    
+    <section id="top" class="py-3 px-6 dark:bg-gray-800 text-gray-100 ">
+      <div class="flex flex-wrap items-center">
+        <div class="flex items-center mb-5 lg:mb-0"><span class="inline-flex justify-center items-center w-16 h-16 mr-4 bg-indigo-500 hover:bg-indigo-800 rounded">
+            <svg class="h-7 w-7 text-white" viewbox="0 0 28 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M23.3328 5.66668H19.3328V4.33334C19.3328 3.27248 18.9114 2.25506 18.1612 1.50492C17.4111 0.754771 16.3937 0.333344 15.3328 0.333344H12.6661C11.6053 0.333344 10.5879 0.754771 9.83771 1.50492C9.08757 2.25506 8.66614 3.27248 8.66614 4.33334V5.66668H4.66614C3.60527 5.66668 2.58786 6.0881 1.83771 6.83825C1.08757 7.58839 0.666138 8.60581 0.666138 9.66668V21.6667C0.666138 22.7275 1.08757 23.745 1.83771 24.4951C2.58786 25.2452 3.60527 25.6667 4.66614 25.6667H23.3328C24.3937 25.6667 25.4111 25.2452 26.1612 24.4951C26.9114 23.745 27.3328 22.7275 27.3328 21.6667V9.66668C27.3328 8.60581 26.9114 7.58839 26.1612 6.83825C25.4111 6.0881 24.3937 5.66668 23.3328 5.66668ZM11.3328 4.33334C11.3328 3.97972 11.4733 3.64058 11.7233 3.39053C11.9734 3.14049 12.3125 3.00001 12.6661 3.00001H15.3328C15.6864 3.00001 16.0256 3.14049 16.2756 3.39053C16.5257 3.64058 16.6661 3.97972 16.6661 4.33334V5.66668H11.3328V4.33334ZM24.6661 21.6667C24.6661 22.0203 24.5257 22.3594 24.2756 22.6095C24.0256 22.8595 23.6864 23 23.3328 23H4.66614C4.31252 23 3.97338 22.8595 3.72333 22.6095C3.47328 22.3594 3.3328 22.0203 3.3328 21.6667V14.9333H7.33281V16.3333C7.33281 16.687 7.47328 17.0261 7.72333 17.2761C7.97338 17.5262 8.31252 17.6667 8.66614 17.6667C9.01976 17.6667 9.3589 17.5262 9.60895 17.2761C9.859 17.0261 9.99947 16.687 9.99947 16.3333V14.9333H17.9995V16.3333C17.9995 16.687 18.1399 17.0261 18.39 17.2761C18.64 17.5262 18.9792 17.6667 19.3328 17.6667C19.6864 17.6667 20.0256 17.5262 20.2756 17.2761C20.5257 17.0261 20.6661 16.687 20.6661 16.3333V14.9333H24.6661V21.6667ZM24.6661 12.3333H3.3328V9.66668C3.3328 9.31305 3.47328 8.97392 3.72333 8.72387C3.97338 8.47382 4.31252 8.33334 4.66614 8.33334H23.3328C23.6864 8.33334 24.0256 8.47382 24.2756 8.72387C24.5257 8.97392 24.6661 9.31305 24.6661 9.66668V12.3333Z" fill="currentColor"></path>
+            </svg></span>
+          <div>
+            <h2 class="mb-1 text-2xl font-bold">Retro Fav's</h2>            
+            <p class="text-sm text-gray-500 font-medium"><span id="countPlatforms" class="text-white"></span> <span>Plataformas</span></p>
+          </div>
+        </div>
+        <div class="w-full md:w-60 lg:w-auto flex  mb-4 md:mb-0 md:mr-4 md:ml-auto  bg-gray-700">
+          <input id="input-rom-folder" class="py-2 pl-4 pr-2 text-sm placeholder-gray-600 bg-gray-700 rounded-lg" type="text" placeholder="Select rom's folder..." readonly>
+          
+        </div><a id="select-file" class="md:w-auto flex items-center py-2 px-4 mr-3 rounded bg-indigo-500 hover:bg-indigo-600 text-white text-sm font-medium" href="javascript:void(null)">
+        <span>Abrir carpeta</span></a>
+        
+      </div>
+    </section>
+    
+    <div >
+        <div id="allcontent" class="flex flex-wrap -mx-0 -mb-4 md:mb-0">
+          
+                    
+
+          <div id="platformsSection" class="w-full md:w-1/3 px-4 mb-4 md:mb-0 hidden">
+            <section class="py-8">
+              <div class="container px-4 mx-auto ">
+                <div class="py-4 bg-gray-900 rounded text-gray-200">
+                  <div class="flex px-6 pb-4 border-b border-gray-700">
+                    <h3 class="text-xl font-bold">Platforms</h3>
+                  </div>
+                  <div id="platformListLoading" class="flex justify-around pt-3 mt-5 hidden">
+                      <p class="inline-flex items-center text-gray-200  text-base font-bold">
+                      <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                      </svg>
+                      Loading platforms...
+                      </p>
+                    </div>
+                  <div id="platformsList" class="pl-4 py-3 text-xs font-medium"></div>
+                </div>
+              </div>
+            </section>
+          </div>
+
+
+
+          <div class="w-full md:w-2/3 px-4 mb-4 md:mb-0">
+            <div class="container px-4 mx-auto">
+              <section class="py-8">
+                <div class="container px-4 mx-auto">
+                  
+
+                  <div id="gameListInfo" class="flex justify-around pl-4 pr-6 py-3 mb-1 bg-gray-900  shadow rounded">
+                      <p class="inline-flex items-center text-gray-200  text-base ">
+                      Select a platform to load the games
+                      </p>
+                      </div>
+
+
+                    <div class="flex flex-wrap">
+                      <div id="boxListGames" class="w-full md:w-3/3 transition duration-500">
+                      <div id="tabsGamesList" class="flex flex-wrap items-center mb-6 text-gray-200 hidden">
+                        <h3 id="platformName" class="text-xl font-bold"></h3>
+                        <div class="w-full md:w-auto my-6 md:my-0 flex items-center ml-auto mr-4 pr-4 ">                    
+                        </div>
+                        <a id="btnShowList" onclick="showGameList('activos')" class="flex items-center py-2 px-4 mr-3 bg-indigo-500 hover:bg-indigo-600 rounded text-xs text-white transition duration-200" href="#"><span class="mr-1">
+                            <svg width="16" height="18" viewbox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M11.3333 15.6667H4.66667C4.00363 15.6667 3.36774 15.4033 2.8989 14.9344C2.43006 14.4656 2.16667 13.8297 2.16667 13.1667V4.83333C2.16667 4.61232 2.07887 4.40036 1.92259 4.24408C1.76631 4.0878 1.55435 4 1.33333 4C1.11232 4 0.900358 4.0878 0.744078 4.24408C0.587797 4.40036 0.5 4.61232 0.5 4.83333V13.1667C0.5 14.2717 0.938987 15.3315 1.72039 16.1129C2.50179 16.8943 3.5616 17.3333 4.66667 17.3333H11.3333C11.5543 17.3333 11.7663 17.2455 11.9226 17.0893C12.0789 16.933 12.1667 16.721 12.1667 16.5C12.1667 16.279 12.0789 16.067 11.9226 15.9107C11.7663 15.7545 11.5543 15.6667 11.3333 15.6667ZM6.33333 9.83333C6.33333 10.0543 6.42113 10.2663 6.57741 10.4226C6.73369 10.5789 6.94565 10.6667 7.16667 10.6667H11.3333C11.5543 10.6667 11.7663 10.5789 11.9226 10.4226C12.0789 10.2663 12.1667 10.0543 12.1667 9.83333C12.1667 9.61232 12.0789 9.40036 11.9226 9.24408C11.7663 9.0878 11.5543 9 11.3333 9H7.16667C6.94565 9 6.73369 9.0878 6.57741 9.24408C6.42113 9.40036 6.33333 9.61232 6.33333 9.83333ZM15.5 6.45C15.4913 6.37344 15.4746 6.29802 15.45 6.225V6.15C15.4099 6.06431 15.3565 5.98555 15.2917 5.91666V5.91666L10.2917 0.916664C10.2228 0.851844 10.144 0.798398 10.0583 0.758331C10.0335 0.754798 10.0082 0.754798 9.98333 0.758331C9.89868 0.709782 9.80519 0.678618 9.70833 0.666664H6.33333C5.67029 0.666664 5.03441 0.930056 4.56557 1.3989C4.09673 1.86774 3.83333 2.50362 3.83333 3.16666V11.5C3.83333 12.163 4.09673 12.7989 4.56557 13.2678C5.03441 13.7366 5.67029 14 6.33333 14H13C13.663 14 14.2989 13.7366 14.7678 13.2678C15.2366 12.7989 15.5 12.163 15.5 11.5V6.5C15.5 6.5 15.5 6.5 15.5 6.45ZM10.5 3.50833L12.6583 5.66666H11.3333C11.1123 5.66666 10.9004 5.57887 10.7441 5.42259C10.5878 5.26631 10.5 5.05434 10.5 4.83333V3.50833ZM13.8333 11.5C13.8333 11.721 13.7455 11.933 13.5893 12.0893C13.433 12.2455 13.221 12.3333 13 12.3333H6.33333C6.11232 12.3333 5.90036 12.2455 5.74408 12.0893C5.5878 11.933 5.5 11.721 5.5 11.5V3.16666C5.5 2.94565 5.5878 2.73369 5.74408 2.57741C5.90036 2.42113 6.11232 2.33333 6.33333 2.33333H8.83333V4.83333C8.83559 5.11762 8.88631 5.39944 8.98333 5.66666H7.16667C6.94565 5.66666 6.73369 5.75446 6.57741 5.91074C6.42113 6.06702 6.33333 6.27898 6.33333 6.5C6.33333 6.72101 6.42113 6.93297 6.57741 7.08925C6.73369 7.24553 6.94565 7.33333 7.16667 7.33333H13.8333V11.5Z" fill="#8880EB"></path>
+                            </svg></span><span>Active</span>
+                        </a>
+                        <a id="btnHideList" onclick="showGameList('ocultos')" class="flex items-center py-2 px-4 mr-3 bg-gray-800 hover:bg-gray-600 rounded text-xs text-white transition duration-200" href="#"><span class="mr-1">
+                            <svg width="16" height="18" viewbox="0 0 16 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              <path d="M11.3333 15.6667H4.66667C4.00363 15.6667 3.36774 15.4033 2.8989 14.9344C2.43006 14.4656 2.16667 13.8297 2.16667 13.1667V4.83333C2.16667 4.61232 2.07887 4.40036 1.92259 4.24408C1.76631 4.0878 1.55435 4 1.33333 4C1.11232 4 0.900358 4.0878 0.744078 4.24408C0.587797 4.40036 0.5 4.61232 0.5 4.83333V13.1667C0.5 14.2717 0.938987 15.3315 1.72039 16.1129C2.50179 16.8943 3.5616 17.3333 4.66667 17.3333H11.3333C11.5543 17.3333 11.7663 17.2455 11.9226 17.0893C12.0789 16.933 12.1667 16.721 12.1667 16.5C12.1667 16.279 12.0789 16.067 11.9226 15.9107C11.7663 15.7545 11.5543 15.6667 11.3333 15.6667ZM6.33333 9.83333C6.33333 10.0543 6.42113 10.2663 6.57741 10.4226C6.73369 10.5789 6.94565 10.6667 7.16667 10.6667H11.3333C11.5543 10.6667 11.7663 10.5789 11.9226 10.4226C12.0789 10.2663 12.1667 10.0543 12.1667 9.83333C12.1667 9.61232 12.0789 9.40036 11.9226 9.24408C11.7663 9.0878 11.5543 9 11.3333 9H7.16667C6.94565 9 6.73369 9.0878 6.57741 9.24408C6.42113 9.40036 6.33333 9.61232 6.33333 9.83333ZM15.5 6.45C15.4913 6.37344 15.4746 6.29802 15.45 6.225V6.15C15.4099 6.06431 15.3565 5.98555 15.2917 5.91666V5.91666L10.2917 0.916664C10.2228 0.851844 10.144 0.798398 10.0583 0.758331C10.0335 0.754798 10.0082 0.754798 9.98333 0.758331C9.89868 0.709782 9.80519 0.678618 9.70833 0.666664H6.33333C5.67029 0.666664 5.03441 0.930056 4.56557 1.3989C4.09673 1.86774 3.83333 2.50362 3.83333 3.16666V11.5C3.83333 12.163 4.09673 12.7989 4.56557 13.2678C5.03441 13.7366 5.67029 14 6.33333 14H13C13.663 14 14.2989 13.7366 14.7678 13.2678C15.2366 12.7989 15.5 12.163 15.5 11.5V6.5C15.5 6.5 15.5 6.5 15.5 6.45ZM10.5 3.50833L12.6583 5.66666H11.3333C11.1123 5.66666 10.9004 5.57887 10.7441 5.42259C10.5878 5.26631 10.5 5.05434 10.5 4.83333V3.50833ZM13.8333 11.5C13.8333 11.721 13.7455 11.933 13.5893 12.0893C13.433 12.2455 13.221 12.3333 13 12.3333H6.33333C6.11232 12.3333 5.90036 12.2455 5.74408 12.0893C5.5878 11.933 5.5 11.721 5.5 11.5V3.16666C5.5 2.94565 5.5878 2.73369 5.74408 2.57741C5.90036 2.42113 6.11232 2.33333 6.33333 2.33333H8.83333V4.83333C8.83559 5.11762 8.88631 5.39944 8.98333 5.66666H7.16667C6.94565 5.66666 6.73369 5.75446 6.57741 5.91074C6.42113 6.06702 6.33333 6.27898 6.33333 6.5C6.33333 6.72101 6.42113 6.93297 6.57741 7.08925C6.73369 7.24553 6.94565 7.33333 7.16667 7.33333H13.8333V11.5Z" fill="#8880EB"></path>
+                            </svg></span><span>Hidden</span>
+                        </a>
+                      </div>
+                                            
+                      <div id="gameListLoading" class="flex justify-around pl-4 pr-6 py-3 mb-1 bg-gray-900  shadow rounded hidden">
+                        <p class="inline-flex items-center text-gray-200  text-base font-bold">
+                          <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          Loading games...
+                        </p>
+                      </div>
+                      
+                      <div id="gamesList"></div>
+                      <div id="gamesHidden"></div>
+                    </div>
+
+                    <div  id="boxDetailGame" class="mt-6 w-full md:w-1/3 hidden transition duration-500">
+
+                            <section class="pt-8">
+                            <div class="container px-4 mx-auto">
+                              <div class="flex flex-wrap -m-4">
+                                <div class="w-full lg:w-1/1 p-4">
+                                  <div id="boxDetailGameContent" class="p-4 bg-gray-900 rounded">
+                                   
+                                    <div class="flex mb-2 justify-between items-center  text-gray-300">                                      
+                                        <h3 id="detailTitle" class="text-sm font-medium  text-gray-200"></h3>                                        
+                                    </div>
+                                    
+                                    <div class="relative h-40 w-full mb-4">
+                                      <img id="detailImg" class="w-full h-full object-cover rounded" alt="">
+                                    </div>                                    
+                                    
+                                    <div class="relative h-40 w-full mb-4">
+                                    <video id="detailVideo" class="w-full h-full object-cover rounded">
+                                      <source id="detailVideoSource">
+                                      </video>
+                                    </div>
+
+                                    <div class="flex mb-6 justify-between items-center  text-gray-300">                                                                              
+                                        <span id="detailDesc" class="text-xs text-gray-300 pr-1"></span>                                      
+                                    </div>
+
+                                    <div class="flex justify-between items-center">
+                                      <h4 class="text-xs text-gray-300 font-medium">Archivo</h4>
+                                    </div>
+                                    <div class="flex mb-2 justify-between items-center">
+                                      <span id="detailPath" class="text-xs font-medium text-gray-400"></span>
+                                    </div>
+
+                                    <div class="flex mb-2 justify-between items-center">
+                                      <h4 class="text-xs text-gray-300 font-medium">Lanzamiento</h4>
+                                      <span id="detailDate" class="text-xs font-medium text-gray-400"></span>
+                                    </div>
+                                    
+                                    <div class="flex mb-2 justify-between items-center">
+                                      <h4 class="text-xs text-gray-300 font-medium">Genero</h4>
+                                      <span id="detailGenre" class="text-xs font-medium text-gray-400"></span>
+                                    </div>                                                                        
+                                    
+                                    <div class="flex mb-5 justify-between items-center">
+                                      <h4 class="text-xs text-gray-300 font-medium">Players</h4>
+                                      <span id="detailPlayers" class="text-xs font-medium text-gray-400"></span>
+                                    </div>
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </section>
+                          
+                    </div>
+
+                  </div>
+                
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    <section id="footer" class="flex flex-wrap pt-2 px-6 bg-gray-900 dark:bg-gray-800 text-gray-100 ">
+    <div class="flex items-baseline w-full md:w-3/4">
+    <p class="text-xs pt-2">Texto ayuda</p>
+    </div>
+    <div class="flex items-baseline w-full md:w-1/4 pr-12 text-right">
+      <button id="btn-save" class="hidden bg-green-600 text-white w-auto py-2 px-4 mr-10 ml-auto rounded text-xs transition transition-duration-200 hover:bg-green-700" onclick="saveFiles()">Guardar</button>
+    </div>
+    </section>     
+
+<!-- Modal -->
+<div id="modal" class="fixed z-10 inset-0 overflow-y-auto hidden" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+    <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">           
+        <div class="fixed inset-0 bg-gray-700 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
+        <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
+
+        <div class="inline-block align-bottom bg-gray-900 rounded-lg text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full">
+            <div class="bg-gray-900 px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
+                <div class="sm:flex sm:items-start">
+                    <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full  sm:mx-0 sm:h-10 sm:w-10">                    
+                        <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                        </svg>
+                    </div>
+                    <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                        <h3 class="text-lg leading-6 font-medium text-gray-100" id="modal-title">
+                            No se han guardado los cambios
+                        </h3>
+                        <div class="mt-2">
+                            <p class="text-sm text-gray-500">
+                                Deseas continuar sin guardar los cambios?
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-800 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
+                <button onclick="closeModalAndContinue()" type="button" class="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm">
+                    Continuar
+                </button>
+                <button onclick="saveFiles()" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border  border-transparent shadow-sm px-4 py-2 bg-green-600 text-base font-medium text-white hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
+                    Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+   <script src="js/ui.js"></script>
+   <script src="js/app.js"></script>
+   <script src="js/keyboard.js"></script>
+  </body>
+</html>

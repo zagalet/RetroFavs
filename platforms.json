@@ -1,0 +1,367 @@
+{
+
+    "3do":
+        {
+            "name": "3do",
+            "info": "The Panasonic 3do Real Multiplayer was a Home Video Game Console developed by the 3do company in 1994. Its humongous price tag of $700 and oversaturation in the video game market at the time meant it was a commercial failure."
+        },
+    "amiga":
+        {
+            "name": "Amiga",
+            "info": "The Amiga was a family of personal computers released by Commodore in the 1980's and 1990's"
+        },
+    "amstradcpc":
+        {
+            "name": "Amstrad CPC",
+            "info": "The Amstrad CPC (short for Colour Personal Computer) is a series of 8-bit home computers produced by Amstrad between 1984 and 1990."
+        },
+    "apple2":
+        {
+            "name": "Apple II",
+            "info": "The Apple II was a series of personal computers starting from 1977 to 1993."
+        },
+    "arcade":
+        {
+            "name": "Arcade/MAME",
+            "info": "MAME stands for Multiple Arcade Machine Emulator. MAME can emulate thousands of games that otherwise would have been lost in the ash-heaps of history."
+        },
+    "atari800":
+        {
+            "name": "Atari 800",
+            "info": "Atari released a series of 8 bit computers (400, 800, 1200XL, 600XL, 800XL, 130XE, 65XE, 800XE, and XEGS) and a video game console known as the Atari 5200 from 1979 to 1992"
+        },
+    "atari2600":
+        {
+            "name": "Atari 2600",
+            "info": "The Atari 2600 was a home video game console released by Atari in 1977"
+        },
+    "atari5200":
+        {
+            "name": "Atari 5200",
+            "info": "Atari released a series of 8 bit computers (400, 800, 1200XL, 600XL, 800XL, 130XE, 65XE, 800XE, and XEGS) and a video game console known as the Atari 5200 from 1979 to 1992"
+        },
+    "atari7800":
+        {
+            "name": "Atari 7800",
+            "info": "The Atari 7800 was a video game console released by Atari in 1986."
+        },
+    "atarijaguar" :
+        {
+            "name": "Atari Jaguar",
+            "info": "The Atari Jaguar was the first 64 bit video game console released in 1993. It was a bad enough commercial failure that it put Atari out of the home video game console business."
+        },
+    "atarilynx":
+        {
+            "name": "Atari Lynx",
+            "info": "The Atari Lynx is the world's first handheld gaming console with a color screen. It was released by Atari in 1989"
+        },
+    "atarist": 
+        {
+        "name": "Atari ST-STE-TT-Falcon",
+        "info": "The Atari ST, STE, TT, and Falcon were a series of personal computers released by Atari starting in 1985."
+        },
+    "coco":
+        {
+            "name": "Coco",
+            "info": "The Tandy Colour Computer series were home computers originally released by the Tandy Corporation in 1980."
+        },
+    "coleco": 
+        {
+            "name": "Colecovision",
+            "info": "The Colecovision is a home video game console released by Coleco in 1982. It features a unique gamepad which is a mixture of a phone keypad and a joystick"
+        },
+    "c64": 
+        {
+            "name": "Commodore 64/VIC-20/PET",
+            "info": "The Commodore 64 is an 8 Bit personal computer introduced in 1982 by Commodore International. This model holds the world record for the highest-selling single computer model of all time."
+        },
+    "daphne": 
+        {
+            "name": "Daphne",
+            "info": "Laserdiscs were predecessors to the DVD. The first laserdisc game was released in 1982. Laserdisc games function much like interactive fiction where you choose your own story and the video adapts to the path you choose to take."
+        },
+    "dragon32": 
+        {
+            "name": "Dragon",
+            "info": "The Dragon 32 and Dragon 64 were home computers originally released in 1980. The 32 and 64 refer to the kilobytes of RAM."
+        },
+    "dreamcast": 
+        {
+            "name": "Dreamcast",
+            "info": "The Sega Dreamcast is a 6th generation home video game console released by Sega in 1998. It is notably the last console that Sega produced."
+        },
+    "fba": 
+        {
+            "name": "FinalBurn Neo",
+            "info": "FinalBurn Neo is a Multiple Arcade Emulator most popular for emulating Neo-Geo, Capcom, Konami, and Cave games. It is developed by the FinalBurn team and originated from FinalBurn by Dave and old MAME versions. FinalBurn Neo is an active fork of the FinalBurn Alpha emulator, created by former FBA developers."
+        },
+    "pifba": 
+        {
+            "name": "FinalBurn Alpha 2x",
+            "info": "This emulates old arcade games using MAME based roms for CPS1, CPS2, Neogeo, Toaplan and many other games. It should support most recent versions of the MAME versions of these ROMS"
+        }, 
+    "fds":
+        {
+            "name": "Famicom Disk System",
+            "info": "The Family Computer Disk System a.k.a. Famicom Disk System was released in Japan in 1986. It is an add-on to the Famicom and used floppy disks."
+        },
+    "gamegear":
+        {
+            "name": "Game Gear",
+            "info": "The Sega Game Gear was an 8 bit handheld gaming console released in 1990"
+        },
+    "gameandwatch": 
+        {
+            "name": "Game & Watch",
+            "info": "Game & Watch is a line of handheld electronic games produced by Nintendo from 1980 to 1991."
+        },
+    "gb":
+        {
+            "name": "Game Boy",
+            "info": "The Game Boy was released by Nintendo in 1989 thus kicking off the era of handheld gaming and Pokemon."
+        },
+    "gba":
+        {
+            "name": "Game Boy Advance",
+            "info": "The Game Boy Advance is a 32 bit handheld video game console released by Nintendo in 2001."
+        },
+    "gbc":
+        {
+            "name": "Game Boy Color",
+            "info": "The Game Boy Color was an 8 bit handheld gaming console released by Nintendo in 1998."
+        },
+    "gc": 
+        {
+            "name": "GameCube",
+            "info": "The GameCube is a home video game console that was released by Nintendo on September 14, 2001."
+        },
+    "gamecube": 
+    {
+        "name": "GameCube",
+        "info": "The GameCube is a home video game console that was released by Nintendo on September 14, 2001."
+    },
+    "genesis":
+        {
+            "name": "Genesis/Megadrive",
+            "info": "This console, known as the Mega Drive everywhere except in the USA where it was renamed Genesis, was released by Sega in 1988"
+        },
+    "intellivision":
+        {
+            "name": "Intellivision",
+            "info": "The Intellivision is a home video game console released by Mattel in 1979"
+        },
+    "macintosh": 
+        {
+            "name": "Macintosh",
+            "info": "The Apple Macintosh, later renamed the Macintosh 128K, was a personal computer released in 1984."
+        },
+    "mame":
+        {
+            "name": "MAME",
+            "info": "MAME stands for Multiple Arcade Machine Emulator. MAME can emulate thousands of games that otherwise would have been lost in the ash-heaps of history."
+        },
+    "mame-advmame":
+        {
+            "name": "MAME (advmame)",
+            "info": "MAME stands for Multiple Arcade Machine Emulator. MAME can emulate thousands of games that otherwise would have been lost in the ash-heaps of history."
+        },
+    "mame-libretro":
+        {
+            "name": "MAME (libretro)",
+            "info": "MAME stands for Multiple Arcade Machine Emulator. MAME can emulate thousands of games that otherwise would have been lost in the ash-heaps of history."
+        },
+    "mame-mame4all": {
+            "name": "MAME (4all)",
+            "info": "MAME stands for Multiple Arcade Machine Emulator. MAME can emulate thousands of games that otherwise would have been lost in the ash-heaps of history."
+        },
+    "mastersystem":
+        {
+            "name": "Master System",
+            "info": "The Sega Master System was a 4th generation video game console released by Sega in 1987."
+        },
+    "megadrive":
+        {
+            "name": "Megadrive",
+            "info": "Mega Drive was released by Sega in 1988"
+        },
+    "moto": 
+        {
+            "name": "Thomson MO/TO",
+            "info": "Thomson MO/TO is a family of 8-bit home computers produced by French company Thomson SA between 1982 and 1989."
+        },
+    "msx": 
+        {
+            "name": "MSX",
+            "info": "The MSX was a 8bit personal computer standard developed by ASCII in 1983. Microsoft provided the BASIC interpreter and later MSX-DOS."
+        },
+    "n64":
+        {
+            "name": "Nintendo 64",
+            "info": "The Nintendo 64 is a 5th generation gaming console released by Nintendo in 1996"
+        },
+    "nds": {
+            "name": "Nintendo DS",
+            "info": "The Nintendo DS is a handheld video game console that was released by Nintendo in 2004. The DS stands for Dual Screen."
+        },
+    "neogeo":
+        {
+            "name": "Neo Geo",
+            "info": "The Neo Geo is a cartridge-based arcade system board and home video game console released by SNK in 1990."
+        },
+    "nes":
+        {
+            "name": "NES",
+            "info": "The Nintendo Entertainment System (NES) is an 8-bit home video game console that was released by Nintendo in 1985. This console officially ended the video game crash of 1983-1984."
+        },
+    "ngp":
+        {
+            "name": "Neo Geo Pocket",
+            "info": "The Neo Geo Pocket was a handheld video game system released by SNK in 1998."
+        },
+    "ngpc":
+        {
+            "name": "Neo Geo Pocket Color",
+            "info": "The Neo Geo Pocket Color was a handheld video game system released by SNK in 1999."
+        },
+    "oric": 
+        {
+            "name": "Oric",
+            "info": "The Oric was a series of home computers originally released by the Tangerine Computer Systems in 1983. Models emulated include Oric-1, Oric Atmos, Stratos/IQ164, and Oric Telestrat."
+        },
+    "pc": 
+        {
+            "name": "PC",
+            "info": "The good old days of DOS."
+        },
+    "pc88": 
+        {
+            "name": "NEC PC8800",
+            "info": "The PC 8800 was a series of 16-bit and 32-bit personal computers released in 1982 by the Nippon Electric Company"
+        },
+    "pc98": 
+        {
+            "name": "NEC PC9800",
+            "info": "The PC-9800 was a series of computers sold between 1982 and 2000 by NEC. The line ended up dominating the Japanese computer gaming market, with over 18 million units sold by the end of it's life."
+        },
+    "pcengine":
+        {
+            "name": "PC Engine",
+            "info": "This console, known as the PC Engine in Japan and as the TurboGrafx-16 Entertainment SuperSystem in the USA, is a home video game console joint-developed by Hudson Soft and NEC, released in 1987."
+        },
+    "psx":
+        {
+            "name": "Playstation 1",
+            "info": "The PlayStation is a 5th generation video game console released by Sony in 1994."
+        },
+    "ps2": 
+        {
+            "name": "Playstation 2",
+            "info": "The PlayStation 2 is a home video game console released by Sony in 2000."
+        },
+    "psp": 
+        {
+            "name": "PSP",
+            "info": "The PlayStation Portable or PSP is a handheld video game system released by Sony in 2004."
+        },
+    "samcoupe": 
+        {
+            "name": "Sam Coupe",
+            "info": "The SAM Coupé was an 8 bit computer released in 1989."
+        },
+    "saturn": 
+        {
+            "name": "Saturn",
+            "info": "The Sega Saturn is a 32 bit 5th generation home video game console released by Sega in 1994. It has a total of 8 processors which makes it one of the most difficult consoles to emulate."
+        },
+    "scummvm": 
+        {
+            "name": "ScummVM",
+            "info": "ScummVM stands for Script Creation Utility for Maniac Mansion (VM stands for virtual machine). ScummVM is a program which allows you to run certain classic graphical point-and-click adventure games, provided you already have their data files"
+        },
+    "sega32x":
+        {
+            "name": "Sega 32X",
+            "info": "The Sega 32X was released as an add-on for the Sega Genesis/Mega Drive in 1994. There was a whopping total of 40 games for this console; It was considered a commercial failure."
+        },
+    "segacd":
+        {
+            "name": "Sega CD",
+            "info": "The Sega CD was an add-on to the Sega Mega Drive/Genesis. It was released in 1991."
+        },
+    "sg-1000":
+        {
+            "name": "SG 1000",
+            "info": "The Sega SG-1000 is the first home video game console released by Sega in 1983."
+        },
+    "snes":
+        {
+            "name": "Super NES",
+            "info": "The Super Nintendo Entertainment System (or SNES) was a 4th generation video game console released by Nintendo in 1991. It is one of the most popular consoles."
+        },
+    "ti99": 
+        {
+            "name": "TI-99",
+            "info": "The TI-99/4A was a home computer originally released by the Texas Instruments in 1981."
+        },
+    "trs-80": 
+        {
+            "name": "TRS-80",
+            "info": "The TRS-80 was a home computer originally released by the Tandy Corporation in 1977. T=Tandy RS=Radio Shack 80=Z-80 microprocessor."
+        },
+    "vectrex":
+        {
+            "name": "Vectrex",
+            "info": "The Vectrex is a vector display-based home video game console released in 1982. On October 27, 1992, Smith Engineering granted permission for the original Vectrex ROMs, manuals, and other original content to be freely distributed for non-commercial purposes."
+        },
+    "videopac": 
+        {
+            "name": "VideoPac / Odyssey 2",
+            "info": "The Magnavox Odyssey2 known in Europe as the Philips Videopac G7000 (and a bunch of other names a bunch of other places) is a home video game console released in 1978. One of the earliest gaming consoles, it is one of the least known today. Games are quite similar in detail to that of Atari 2600."
+        },
+    "virtualboy": 
+        {
+            "name": "Virtual Boy",
+            "info": "The Virtual Boy was Nintendo's attempt at virtual reality in 1995 and it was a horrid commercial failure."
+        },
+    "wii": 
+        {
+            "name": "Wii",
+            "info": "The Wii is a home video game console that was released by Nintendo on November 19, 2006."
+        },
+    "wonderswan": 
+        {
+            "name": "Wonderswan",
+            "info": "WonderSwan is a handheld gaming device that was released by Bandai solely in Japan in 1998."
+        },
+    "wswan": 
+        {
+            "name": "Wonderswan",
+            "info": "WonderSwan is a handheld gaming device that was released by Bandai solely in Japan in 1998."
+        },
+    "wonderswancolor":
+        {
+            "name": "Wonderswan Color",
+            "info": "WonderSwan Color is a handheld gaming device that was released by Bandai in 2000."
+        },
+    "x1": 
+        {
+            "name": "Sharp X1",
+            "info": "The X1, sometimes called the Sharp X1, is a series of home computers released by Sharp Corporation from 1982 to 1988. It was based on a Z80 CPU."
+        },
+    "x68000": 
+        {
+            "name": "Sharp X68000",
+            "info": "The Sharp X68000 was a Japan-only home computer released in 1987."
+        },
+    "zmachine": 
+        {
+            "name": "Zmachine",
+            "info": "Infocom created a bunch of text based adventure games to be utilised by a Z-Machine interpreter (i.e. an emulator). Notable titles include the Zork Series and The Hitchhikers Guide to the Galaxy."
+        },
+    "zxspectrum":
+        {
+            "name": "ZX Spectrum",
+            "info": "The ZX Spectrum was an 8 bit series of home computers released by Sinclair Research in 1982."
+        }
+ 
+}

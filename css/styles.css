@@ -1,0 +1,89 @@
+@import url('../node_modules/@fortawesome/fontawesome-free/css/all.min.css');
+body,html{
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;       
+}
+
+
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);  
+  -webkit-border-radius: 5px;
+  border-radius: 5px;  
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+   background:black;
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+  background: black;
+}
+
+#allcontent {
+  min-height: 80vh;  
+}
+
+#platformsList{
+  overflow: hidden;
+  height: auto;  
+  max-height: calc( 80vh - 7.5rem);
+  -webkit-overflow-scrolling: touch; 
+  padding-right: calc(1rem + 12px);   
+}
+#platformsList:hover {
+  overflow: auto;
+  padding-right: 1rem;
+}
+
+#gamesList:hover,
+#gamesHidden:hover{
+  overflow: auto;
+  padding-right: 0.2rem;
+}
+
+#gamesList{
+  overflow:hidden;
+  height:auto;  
+  max-height: calc(80vh - 6rem);
+  padding-right: calc(0.2rem + 12px);
+}
+
+#gamesHidden{
+  overflow:hidden;
+  height:auto;  
+  max-height: calc(80vh - 6rem);
+  padding-right: calc(0.2rem + 12px);
+}
+
+#boxDetailGameContent{
+  height: calc(80vh - 6rem);
+  overflow: hidden;
+}
+#detailDesc {
+  overflow: hidden;
+  height: 2.5rem;
+}
+#detailDesc {
+  overflow: auto;  
+  height: 13rem;
+}
+
+#top{
+  height:13vh;
+  overflow: hidden;
+}
+#footer{
+  height: 7vh;
+  overflow: hidden;
+}
+
+#input-rom-folder{
+  width: 50vw;
+}
