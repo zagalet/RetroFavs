@@ -1,7 +1,7 @@
 {
-  "name": "romlists",
+  "name": "retrofavs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Selecciona de forma rápida las roms que quieres mostrar en cada plataforma de Retropie",
   "main": "main.js",
   "scripts": {
     "start": "electron ."
