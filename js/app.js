@@ -154,7 +154,7 @@ function closeModalAfterSave() {
 }
 
 function selectPlatform(romSelected)
-{    
+{
     /**
     *   verificar si hay cambios para guardar antes de cambiar de plataforma
     */
@@ -294,7 +294,7 @@ function openInfo(gameId) {
              fs.access(params.image, fs.constants.F_OK, (err) => {                 
                  if (!err) {                    
                      document.getElementById('detailImg').parentNode.classList.remove('hidden');
-                    document.getElementById('detailImg').setAttribute('src', escape(params.image));                    
+                    document.getElementById('detailImg').setAttribute('src', params.image);                    
                 }                
             });            
         }
@@ -311,7 +311,7 @@ function openInfo(gameId) {
                 if (!err) {               
      
                     videoPlayer.setAttribute("style", `top: 0; left: 0; width: 100%;`);
-                    videoPlayerSource.setAttribute("src", escape(params.video));
+                    videoPlayerSource.setAttribute("src", params.video);
                     videoPlayer.load();
                     try {
                         let PromiseVideo = videoPlayer.play();
@@ -612,7 +612,8 @@ ipcRenderer.on('selected-directory', function (event, path) {
 /**
 * Comprobamos si tenemos guardada una ruta previa
 */
-if (prevSessionFolder = localStorage.getItem('romFolder')) {    
+if (prevSessionFolder = localStorage.getItem('romFolder')) {            
+    
     setPathCarpetaRoms(prevSessionFolder);
     getFolderRoms(prevSessionFolder);
 }

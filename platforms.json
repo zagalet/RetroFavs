@@ -99,6 +99,21 @@
         {
             "name": "FinalBurn Alpha 2x",
             "info": "This emulates old arcade games using MAME based roms for CPS1, CPS2, Neogeo, Toaplan and many other games. It should support most recent versions of the MAME versions of these ROMS"
+        },
+    "cps1": 
+        {
+            "name": "Capcom Play System 1",
+            "info": "Is an arcade board made by Capcom that debuted in 1988 with Forgotten Worlds. Street Fighter II, one of the most important and famous fighting games in the genre, used this board."
+        },
+    "cps2": 
+        {
+            "name": "Capcom Play System 2",
+            "info": "Is an arcade motherboard system that debuted in 1993 with the game Super Street Fighter II."
+        }, 
+    "cps3": 
+        {
+            "name": "Capcom Play System 3",
+            "info": "Is an arcade board that was created and introduced by Capcom in 1996 with the game Red Earth"
         }, 
     "fds":
         {
