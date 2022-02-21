@@ -1,15 +1,10 @@
 const { ipcRenderer } = require('electron');
 const fs = require('fs');
+const path = require('path');
 const xml2js = require('xml2js');
 const parser = new xml2js.Parser();
 
 let mainSender = null;
-
-ipcRenderer.on('getGamesFromGameListXml', (event, params) => {    
-    mainSender = event.sender;
-    getGamesFromGameListXml(params);
-});
-
 
 function getGamesFromGameListXml(params)
 {
@@ -23,7 +18,7 @@ function getGamesFromGameListXml(params)
     let allGamesFile = null;
 
     try {
-        allGamesFile = fs.readFileSync(baseUrl + '/gamelist.xml.all');
+        allGamesFile = fs.readFileSync(baseUrl + path.sep + 'gamelist.xml.all');
         
         /**
         * parseamos archivo
@@ -58,7 +53,7 @@ function getGamesFromGameListXml(params)
     * leemos el archivo gamelist.xml
     */
     try {
-        let gamelistFile = fs.readFileSync(baseUrl + '/gamelist.xml');
+        let gamelistFile = fs.readFileSync(baseUrl + path.sep + 'gamelist.xml');
 
         /**
         * parseamos archivo
@@ -139,3 +134,10 @@ function getGamesFromGameListXml(params)
     });
 }
 
+/**
+  ipcRendered
+ */
+ipcRenderer.on('getGamesFromGameListXml', (event, params) => {    
+    mainSender = event.sender;
+    getGamesFromGameListXml(params);
+});

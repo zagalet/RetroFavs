@@ -8,6 +8,7 @@ const parser = new xml2js.Parser();
 const sharp = require('sharp');
 const mkdirp = require('mkdirp');
 const { setTimeout } = require('timers');
+const selectDirBtn = document.getElementById('select-file');
 
 /**
  * importamos info de plataformas
@@ -78,73 +79,6 @@ function setPathCarpetaRoms(path) {
     document.getElementById("countPlatforms").innerHTML = 0;
 }
 
-async function checkIfGamelistXmlExist(romsFolder, file)
-{        
-    /**
-    *   miramos si tiene gamelist.xml
-    */
-    let hayPlataformas = false;
-
-    try {     
-        
-        await fsp.access(romsFolder + path.sep + file.name + '/gamelist.xml', fs.constants.F_OK, (err) => {     
-            if (!err) {                
-                
-                showPlatformInList(file.name);
-                total_platforms++;
-                document.getElementById("countPlatforms").innerHTML = total_platforms;
-           
-                /**
-                *   guardamos en local storage la carpeta roms seleccionada previamente
-               */
-                if (hayPlataformas === false) {                    
-                    hayPlataformas = true;
-                    localStorage.setItem('romFolder', romsFolder);
-                    hidePlatformsListLoading();                    
-                }
-            }
-            else {
-                
-            }
-        });        
-        
-    }
-    catch (error) {
-
-    }    
-}
-
-
-
-
-async function getFolderRoms(fromPrevSession = null) {            
-
-    showPlatformsListLoading();
-
-    try {
-        const files = await fsp.readdir(romsFolder, { withFileTypes: true });
-        total_platforms = 0;
-        
-        document.getElementById('platformsSection').classList.remove('hidden');
-        showPlatformsListLoading();
-        
-        
-        for (const file of files) {                        
-            if (file.isDirectory()) {                
-             checkIfGamelistXmlExist(romsFolder, file);
-            }
-        }
-                
-    } catch (error) {                
-
-        if (prevSessionFolder !== null) {
-            romsFolder = null;
-            localStorage.removeItem('romFolder');
-            document.getElementById('input-rom-folder').value = '';
-        }
-    }    
-}
-
 function selectGame(gameId)
 {
     if ( isLoading() )
@@ -154,116 +88,6 @@ function selectGame(gameId)
     selected_game_id = selected_game_id == gameId ? null : gameId;
     highlightGameOn();
 }
-
-async function leerGameList(romPlatformFolder) {        
-
-    baseUrl = romsFolder + path.sep + romPlatformFolder;     
-    
-    games_active = [];
-    games_active_user_def = [];
-    selected_game_id = null;
-    showGameList('activos');
-
-    document.getElementById("gamesList").innerHTML = '';
-    document.getElementById("gamesHidden").innerHTML = '';
-    resetChangesToSave();
-    resetCounters();
-        
-    try {        
-       document.getElementById("platformName").innerHTML = platforms[romPlatformFolder].name;        
-    }
-    catch (error) {
-        document.getElementById("platformName").innerHTML = romPlatformFolder;        
-    }
-    
-    showTabsGameList();
-    
-
-    loading_list_games = true;
-
-    let params = {
-        'baseUrl': baseUrl
-    }
-    ipcRenderer.send('getGamesFromGameListXml', params);
-
-
-
-    return;   
-    showCountersInTabs();
-    hideGamesListLoading();
-
-}
-
-ipcRenderer.on('insertGameInList', (event, params) => {            
-    insertGameInList(params.game, params.list);
-    if (params.game.active === true)
-        total_visible_games++;
-    else if (params.game.active === false)
-        total_hidden_games++;
-    
-    showCountersInTabs();
-});
-
-ipcRenderer.on('endInsertGameInList', (event, params) => {      
-    games_active = params.games_active;
-    showCountersInTabs();
-    hideGamesListLoading();
-});
-
-async function insertGameInList(game, whatList) {
-    let listId = "gamesList";
-    let btnLabel = "Hide";
-    let btnStyle = "btn-danger";
-    let moveTo = "hidden";
-
-    if (whatList === "hidden") {
-        listId = "gamesHidden";        
-        btnLabel = "Show";
-        btnStyle = "btn-success";
-        moveTo = "show";
-    }
-    let gameListBox = document.getElementById(listId);
-    
-    let html = htmlListBoxGame(game, moveTo);
-  
-    gameListBox.insertAdjacentHTML('beforeend', html);
-    return;
-    //TODO esta parte tiene que hacerse en background
-    /**
-    * cargamos la imagen de forma asincrona
-    */
-    try {
-        if (game.image[0]) {
-            let image = hasDotSlash(game.image[0]) ? removeDotSlash(game.image[0]) : game.image[0];
-            let imageName = path.basename(image);
-            let imgCache = './img-cache/' + selected_platform_name + '/';
-
-            /**
-            * verifica existe carpeta de plataforma en caché, sinó la crea
-            */
-            await mkdirp(imgCache);
-
-            /**
-            * verificar si existe miniatura antes de crearla
-            */
-            await fsp.access(imgCache + imageName, fs.constants.F_OK, (err) => {
-                if (err) {
-                    sharp(baseUrl + image)
-                        .resize(40, 30)
-                        .toFile(imgCache + imageName, (e) => {
-                            if (!(e) && document.getElementById('gameId_' + game.gameId)) {
-                                document.getElementById('gameId_' + game.gameId).getElementsByClassName('img-thumbnail')[0].setAttribute('src', imgCache + imageName);
-                            }
-                        });
-                } else {
-                    document.getElementById('gameId_' + game.gameId).getElementsByClassName('img-thumbnail')[0].setAttribute('src', imgCache + imageName);
-                }
-            });
-        }
-    }
-    catch { }
-}
-
 
 function moveGameToList(gameId, whatList) {
    
@@ -374,81 +198,6 @@ function resetChangesToSave()
 {    
     changes = false;    
     document.getElementById('btn-save').classList.add("hidden");
-}
-
-async function saveFiles()
-{    
-    try {
-        /**
-        * creamos copia si no existe
-        */
-        await backupFile();
-
-        /**
-        * reescribimos gamelist.xml con los juegos seleccionados
-        */
-        await writeGamesToXml();
-    }
-    catch (e){
-        
-    }       
-
-    resetChangesToSave();
-}
-
-async function writeGamesToXml() {
-    let games_to_write = [];
-    /*
-    * creamos duplicado del objeto para no modificar el actual 
-    */
-    let temp_games_active = JSON.parse(JSON.stringify(games_active));    
-
-    temp_games_active.forEach((gametowrite, index) => {
-        if (gametowrite.active === true) {
-            delete gametowrite.active;
-            delete gametowrite.gameId;
-            games_to_write.push(gametowrite);
-        }
-    });
-    
-    let gamelist = {
-        gameList: {
-            provider: {
-                System: selected_platform_name,
-                software: 'Nombre de la aplicación',
-                web: 'url de GIT'
-            },
-            game: games_to_write
-        }    
-    };
-    let builder = new xml2js.Builder();
-    let xml = builder.buildObject(gamelist);    
-    
-    try {        
-        await fsp.writeFile(baseUrl + '/gamelist.xml', xml);        
-            temp_games_active = null;
-            if (modalOpened === true) {
-                closeModalAfterSave();
-            }
-    }
-    catch (e) {        
-        temp_games_active = null;        
-        if (modalOpened === true) {
-            closeModalAfterSave();
-        }
-    }    
-
-    
-    
-}
-
-async function backupFile()
-{
-    try {
-        await fsp.copyFile(baseUrl + '/gamelist.xml', baseUrl + '/gamelist.xml.all', fs.constants.COPYFILE_EXCL);        
-    }
-    catch (e) {        
-    }
 }
 
 function hasDotSlash(path)
@@ -586,23 +335,261 @@ function openInfo(gameId) {
     
 }
 
-const selectDirBtn = document.getElementById('select-file');
+/**
+    async functions
+*/
+
+async function saveFiles()
+{    
+    try {
+        /**
+        * creamos copia si no existe
+        */
+        await backupFile();
+
+        /**
+        * reescribimos gamelist.xml con los juegos seleccionados
+        */
+        await writeGamesToXml();
+    }
+    catch (e){
+        
+    }       
+
+    resetChangesToSave();
+}
+
+async function writeGamesToXml() {
+    let games_to_write = [];
+    /*
+    * creamos duplicado del objeto para no modificar el actual 
+    */
+    let temp_games_active = JSON.parse(JSON.stringify(games_active));    
+
+    temp_games_active.forEach((gametowrite, index) => {
+        if (gametowrite.active === true) {
+            delete gametowrite.active;
+            delete gametowrite.gameId;
+            games_to_write.push(gametowrite);
+        }
+    });
+    
+    let gamelist = {
+        gameList: {
+            provider: {
+                System: selected_platform_name,
+                software: 'Nombre de la aplicación',
+                web: 'url de GIT'
+            },
+            game: games_to_write
+        }    
+    };
+    let builder = new xml2js.Builder();
+    let xml = builder.buildObject(gamelist);    
+    
+    try {        
+        await fsp.writeFile(baseUrl + path.sep + 'gamelist.xml', xml);        
+            temp_games_active = null;
+            if (modalOpened === true) {
+                closeModalAfterSave();
+            }
+    }
+    catch (e) {        
+        temp_games_active = null;        
+        if (modalOpened === true) {
+            closeModalAfterSave();
+        }
+    }    
+
+    
+    
+}
+
+async function backupFile()
+{
+    try {
+        await fsp.copyFile(baseUrl + '/gamelist.xml', baseUrl + path.sep + 'gamelist.xml.all', fs.constants.COPYFILE_EXCL);        
+    }
+    catch (e) {        
+    }
+}
+
+async function checkIfGamelistXmlExist(romsFolder, file)
+{        
+    /**
+    *   miramos si tiene gamelist.xml
+    */
+    let hayPlataformas = false;
+
+    try {     
+        
+        await fsp.access(romsFolder + path.sep + file.name + path.sep + 'gamelist.xml', fs.constants.F_OK, (err) => {     
+            if (!err) {                
+                
+                showPlatformInList(file.name);
+                total_platforms++;
+                document.getElementById("countPlatforms").innerHTML = total_platforms;
+           
+                /**
+                *   guardamos en local storage la carpeta roms seleccionada previamente
+               */
+                if (hayPlataformas === false) {                    
+                    hayPlataformas = true;
+                    localStorage.setItem('romFolder', romsFolder);
+                    hidePlatformsListLoading();                    
+                }
+            }
+            else {
+                
+            }
+        });        
+        
+    }
+    catch (error) {
+
+    }    
+}
+
+async function getFolderRoms(fromPrevSession = null) {            
+
+    showPlatformsListLoading();
+
+    try {
+        const files = await fsp.readdir(romsFolder, { withFileTypes: true });
+        total_platforms = 0;
+        
+        document.getElementById('platformsSection').classList.remove('hidden');
+        showPlatformsListLoading();
+        
+        
+        for (const file of files) {                        
+            if (file.isDirectory()) {                
+             checkIfGamelistXmlExist(romsFolder, file);
+            }
+        }
+                
+    } catch (error) {                
+
+        if (prevSessionFolder !== null) {
+            romsFolder = null;
+            localStorage.removeItem('romFolder');
+            document.getElementById('input-rom-folder').value = '';
+        }
+    }    
+}
+
+async function leerGameList(romPlatformFolder) {        
+
+    baseUrl = romsFolder + path.sep + romPlatformFolder;     
+    
+    games_active = [];
+    games_active_user_def = [];
+    selected_game_id = null;
+    showGameList('activos');
+
+    document.getElementById("gamesList").innerHTML = '';
+    document.getElementById("gamesHidden").innerHTML = '';
+    resetChangesToSave();
+    resetCounters();
+        
+    try {        
+       document.getElementById("platformName").innerHTML = platforms[romPlatformFolder].name;        
+    }
+    catch (error) {
+        document.getElementById("platformName").innerHTML = romPlatformFolder;        
+    }
+    
+    showTabsGameList();
+    
+
+    loading_list_games = true;
+
+    let params = {
+        'baseUrl': baseUrl
+    }
+    ipcRenderer.send('getGamesFromGameListXml', params);
 
 
-selectDirBtn.addEventListener('click', function (event) {
-    ipcRenderer.send('open-directory-dialog')
-});
 
+    return;   
+    showCountersInTabs();
+    hideGamesListLoading();
 
+}
+
+async function insertGameInList(game, whatList) {
+    let listId = "gamesList";
+    let btnLabel = "Hide";
+    let btnStyle = "btn-danger";
+    let moveTo = "hidden";
+
+    if (whatList === "hidden") {
+        listId = "gamesHidden";        
+        btnLabel = "Show";
+        btnStyle = "btn-success";
+        moveTo = "show";
+    }
+    let gameListBox = document.getElementById(listId);
+    
+    let html = htmlListBoxGame(game, moveTo);
+  
+    gameListBox.insertAdjacentHTML('beforeend', html);
+    return;
+    //TODO esta parte tiene que hacerse en background
+    /**
+    * cargamos la imagen de forma asincrona
+    */
+    try {
+        if (game.image[0]) {
+            let image = hasDotSlash(game.image[0]) ? removeDotSlash(game.image[0]) : game.image[0];
+            let imageName = path.basename(image);
+            let imgCache = './img-cache/' + selected_platform_name + '/';
+
+            /**
+            * verifica existe carpeta de plataforma en caché, sinó la crea
+            */
+            await mkdirp(imgCache);
+
+            /**
+            * verificar si existe miniatura antes de crearla
+            */
+            await fsp.access(imgCache + imageName, fs.constants.F_OK, (err) => {
+                if (err) {
+                    sharp(baseUrl + image)
+                        .resize(40, 30)
+                        .toFile(imgCache + imageName, (e) => {
+                            if (!(e) && document.getElementById('gameId_' + game.gameId)) {
+                                document.getElementById('gameId_' + game.gameId).getElementsByClassName('img-thumbnail')[0].setAttribute('src', imgCache + imageName);
+                            }
+                        });
+                } else {
+                    document.getElementById('gameId_' + game.gameId).getElementsByClassName('img-thumbnail')[0].setAttribute('src', imgCache + imageName);
+                }
+            });
+        }
+    }
+    catch { }
+}
 
 /**
-* Comprobamos si tenemos guardada una ruta previa
+    ipcRenderer
 */
-if (prevSessionFolder = localStorage.getItem('romFolder')) {
+
+ipcRenderer.on('insertGameInList', (event, params) => {            
+    insertGameInList(params.game, params.list);
+    if (params.game.active === true)
+        total_visible_games++;
+    else if (params.game.active === false)
+        total_hidden_games++;
     
-    setPathCarpetaRoms(prevSessionFolder);
-    getFolderRoms(prevSessionFolder);
-}
+    showCountersInTabs();
+});
+
+ipcRenderer.on('endInsertGameInList', (event, params) => {      
+    games_active = params.games_active;
+    showCountersInTabs();
+    hideGamesListLoading();
+});
 
 /**
 * Getting back the information after selecting the file
@@ -622,6 +609,17 @@ ipcRenderer.on('selected-directory', function (event, path) {
 
 });
 
+/**
+* Comprobamos si tenemos guardada una ruta previa
+*/
+if (prevSessionFolder = localStorage.getItem('romFolder')) {    
+    setPathCarpetaRoms(prevSessionFolder);
+    getFolderRoms(prevSessionFolder);
+}
+
+selectDirBtn.addEventListener('click', function (event) {
+    ipcRenderer.send('open-directory-dialog')
+});
 
 //TODO cambiar scroll al pasar de la lista de arriba a abajo o cambiar de listado
 // o al ocultar ultima fila y saltamos a primera fila
