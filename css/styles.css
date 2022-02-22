@@ -1,4 +1,6 @@
 @import url('../node_modules/@fortawesome/fontawesome-free/css/all.min.css');
+@import url('../node_modules/keyboard-css/dist/css/main.min.css');
+
 body,html{
   height: 100vh;
   overflow: hidden;
